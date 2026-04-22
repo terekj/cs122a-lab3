@@ -15,11 +15,11 @@ module btnSM (
     always @(posedge clk) begin
         case (state)
             RELEASED: begin
-                if (in) begin`
+                if (in) begin
                     if (cnt == STABLE_CYCLES - 1) begin
                         state = PRESSED;
                         cnt = '0;
-                        if (duty == 4'd9) duty = 4'd0;
+                        if (duty == 4'd10) duty = 4'd0;
                         else duty = duty + 4'd1;
                     end else begin
                         cnt = cnt + 1'b1;
